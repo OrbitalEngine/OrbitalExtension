@@ -1,9 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.10'
-    id 'application'
 }
 
-group = 'dev.yeff.orbital.example'
+group = 'dev.yeff.orbital.extensions'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -37,8 +36,4 @@ compileKotlin {
 
 compileTestKotlin {
     kotlinOptions.jvmTarget = '11'
-}
-
-application {
-    mainClassName = 'dev.yeff.orbital.example.MainKt'
 }
