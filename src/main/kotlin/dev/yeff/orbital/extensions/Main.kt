@@ -5,7 +5,7 @@ import dev.yeff.orbital.ecs.GameObject
 import dev.yeff.orbital.ecs.components.TransformComponent
 import dev.yeff.orbital.ecs.components.render.RenderShapeComponent
 import dev.yeff.orbital.extensions.components.MovementComponent
-import dev.yeff.orbital.graphics.Colors
+import dev.yeff.orbital.graphics.Color
 import dev.yeff.orbital.graphics.Shapes
 import dev.yeff.orbital.math.Vector2f
 import dev.yeff.orbital.scenes.Scene
@@ -18,7 +18,7 @@ fun main() {
             override fun init(game: Game?) {
                 obj = GameObject(this, "Object")
                 obj.addComponent(TransformComponent(game!!.screenCenter, 30.0f))
-                obj.addComponent(RenderShapeComponent(Shapes.RECTANGLE, Colors.RED))
+                obj.addComponent(RenderShapeComponent(Shapes.RECTANGLE, Color(0.0f, 255.0f, 0.0f) + Color(0.0f, 0.0f, 255.0f)))
                 obj.addComponent(MovementComponent(10.0f))
 
                 addGameObject(game, obj)
@@ -37,7 +37,9 @@ fun main() {
     val game = Game(
         Vector2f(400.0f, 400.0f),
         "test",
-        scenes
+        scenes,
+        false,
+        60.0f
     )
 
     game.start("Main")
